@@ -1,0 +1,18 @@
+from string import ascii_uppercase
+
+def main():
+    print(f'Английский алфавит: {ascii_uppercase}')
+    
+    a = int(input())
+    
+    if a > 23:
+        print(f'{ascii_uppercase[a - 1::]}{ascii_uppercase[0:4 - len(ascii_uppercase[a - 1::])]}')
+    
+    elif 0 >= a >= -3:
+        print('не предусмотрено')
+    
+    else:
+        print(ascii_uppercase[a - 1:a + 3])
+
+if __name__ == "__main__":
+    main()
