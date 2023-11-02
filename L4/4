@@ -1,0 +1,9 @@
+def main():
+    ch = input()
+    a = ''
+    
+    for i in range(int(input())):
+        a += input()
+
+if __name__ == '__main__':
+    main()
