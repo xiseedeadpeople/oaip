@@ -1,1 +1,7 @@
-asd
+def main():
+    c = []
+    a = input()
+    c.append(a) if a != '' else print(0)
+
+if __name__ == '__main__':
+    main()
