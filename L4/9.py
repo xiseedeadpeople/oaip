@@ -1,7 +1,6 @@
 def main():
     pasw = input()
     a = ''
-    'аяоёэеуюыи'
     for i in pasw:
         if i in 'аяоёэеуюыи':
             a += '0'
