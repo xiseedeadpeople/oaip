@@ -1,13 +1,14 @@
 def main():
-    b = float(input())
     c = 0
     
-    c = 1 if b > 36.6 else print(0)
+    while True:
+        a = float(input())
+        if a > 36.6:
+            break
     
-    while b < 36.6:
-        b = float(input())
-        if b < 0:
-            c += 1
+        else:
+            if a < 0:
+                c += 1
     
     print(c)
     
