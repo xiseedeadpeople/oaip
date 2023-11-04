@@ -1,6 +1,6 @@
 def main():
     a, b = input(), input()
-    if a and b == 'да' or a and b == 'нет':
+    if (a == 'да' and b == 'да') or (a == 'нет' and b == 'нет'):
         print('ВЕРНО')
     
     else:
