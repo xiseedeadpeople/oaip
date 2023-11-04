@@ -1,7 +1,6 @@
 def main():
     tup = ()
     tup2 = (1, 2, 3, 'asd')
-    print(type(tup), type(tup2))
 
 if __name__ == "__main__":
     main()
