@@ -1,15 +1,15 @@
 def main():
-    a = int(input())
     x = []
-    x.append(a)
-    
-    while a < 100:
-    
+
+    while True:
         a = int(input())
-        x.append(a)
+        if -1000 < a < 1000:
+            x.append(a)
+        else:
+            break
     
     x.sort()
-    print(x[-3])
+    print(x[-2])
 
 if __name__ == '__main__':
     main()
