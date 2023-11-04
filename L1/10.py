@@ -4,8 +4,8 @@ def main():
     
     s.update('wwrz', '21')
     s.add('3')
-    s_union = s.union(s1)
     
+    s_union = s.union(s1)
     s_union.pop()
     s_isctn = s.intersection(s1)
     s_symdif = s.symmetric_difference(s1)
