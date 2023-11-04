@@ -3,11 +3,11 @@ def main():
     while True:
         a = input()
     
-        if a != 'стоп':
-            b.append(a)
-    
-        else:
+        if a == 'стоп':
             break
+
+        else:
+            b.append(a)
     
     
     print(min(b, key=len)) if len(b) > 0 else print(0)
