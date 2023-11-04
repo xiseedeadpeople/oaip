@@ -5,7 +5,7 @@ def main():
     print('Результат анализа:', end=' ')
     for i in range(3):
         if positive[i] in review:
-            print(review.find(positive[i]), end=', ')
+            print(review.find(positive[i]), end=' ')
 
 if __name__ == "__main__":
     main()
