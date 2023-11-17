@@ -1,4 +1,3 @@
-import random
 from bs4 import BeautifulSoup
 from random import choice
 
@@ -20,7 +19,7 @@ nouns = soup.findAll('div', class_='position_title')
 def hangman():
     print('Игра начинается!')
 
-    length = random.choice([i for i in range(5, 8)])
+    length = choice([i for i in range(5, 8)])
 
     while True:
         word = choice(nouns).text
