@@ -1,7 +1,6 @@
 def main():
     l1 = input().split(';')
     l2 = [i.split(',') for i in l1]
-    print(l2)
 
     for rows in range(len(l2)):
         for el in range(len(l2[rows])):
