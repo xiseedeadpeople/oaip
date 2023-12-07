@@ -1,15 +1,10 @@
 def main():
-    c = []
-    a = input()
-    c.append(a) if a != '' else print(0)
-    
-    
-    while a != '':
-        a = input()
-        c.append(a)
-    
-    for i in c:
-        print(len(i))
+    while True:
+        a = len(input('Введите слово: '))
+        if a > 0:
+            print(a)
+        else:
+            break
 
 if __name__ == '__main__':
     main()
