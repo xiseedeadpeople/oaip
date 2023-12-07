@@ -4,8 +4,12 @@ def main():
         b = int(input())
         print(2 / 0)
     
-    except (ZeroDivisionError, ValueError) as e:
-        print(e)
+    except ZeroDivisionError:
+        print('ZeroDivErr!')
+    
+    except ValueError:
+        print('ValueErr!')
+
 
 if __name__ == "__main__":
     main()
