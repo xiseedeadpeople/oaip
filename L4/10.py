@@ -2,15 +2,12 @@ def main():
     message = 'ППррииввеетт!!  ККаакк  ддееллаа??  ССееггоодднняя  ттааккааяя  ' \
               'ххоорроошшааяя  ппооггооддаа,,  ммоожжеетт  ппооггуулляяеемм??'
     
-    res = ''
-    for i in range(len(message) - 1):
-        if message[i] != message[i + 1]:
-            res += message[i]
+    r = ''
     
-    if message[-1] != res[-1]:
-        res += message[-1]
+    for i in range(0, len(message), 2):
+        r += message[i]
     
-    print(res)
+    print(r)
 
 if __name__ == '__main__':
     main()
