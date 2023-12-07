@@ -1,16 +1,20 @@
 def main():
-    q = ''
+    x = ''
     while True:
-        a = input()
+        a = f'{input()} '
     
-        if a != 'стоп':
-            q += a
+        if a != 'стоп ':
+            if '!' in a:
+                x += f'{a}\n'
+    
+            else:
+                x += a
     
         else:
             break
     
-    print(q)
-    print(' '.join(q.split('!')))
+    print(x)
+
 
 if __name__ == '__main__':
     main()
