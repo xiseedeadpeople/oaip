@@ -7,5 +7,5 @@ def main():
     
         except ValueError:
             print('ValueErr!')
- if __name__ == "__main__":
-  main()
+if __name__ == "__main__":
+    main()
