@@ -4,10 +4,8 @@ def simple(n, div=None):  # 4
 
     while div >= 2:
         if n % div == 0:
-            print('Число не простое')
-            return False
+            return 'число не простое'
         else:
             return simple(n, div-1)
     else:
-        print('число простое')
-        return True
+        return 'число простое'
