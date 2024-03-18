@@ -20,7 +20,7 @@ class CreateChest:
         if self.status == 'opened':
             print('вы закрыли сундук.')
 
-        chest.status_switch()
+        self.status_switch()
 
     def loot(self):
         """ функция для того чтобы ограбить сундук """
