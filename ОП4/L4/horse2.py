@@ -1,6 +1,4 @@
-def horse2():
-
-    place = input('расположение: ')
+def horse2(place):
     rank = 'abcdefgh'
 
     moves = [[-2, 1], [-1, 2], [1, 2], [2, 1],
