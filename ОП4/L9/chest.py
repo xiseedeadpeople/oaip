@@ -38,21 +38,3 @@ class CreateChest:
 
         else:
             self.status = 'closed'
-
-
-chest = CreateChest((0, 0), 'closed', '123 золотых монеты')
-chest.drag(2, 3)
-
-print()
-
-chest.interact()
-chest.interact()
-
-print()
-
-chest.loot()
-
-print()
-
-chest.interact()
-chest.loot()
