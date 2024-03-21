@@ -27,18 +27,4 @@ class CreateButton:
 
         self.url = new_url
         print(f'вы вставили новую ссылку: {new_url}')
-
-
-btn = CreateButton((0, 0), (255, 255, 255), 'https://ya.ru/')
-
-btn.getinfo()
-
-print()
-
-btn.drag(2, 3)
-btn.set_url('https://www.google.ru/')
-btn.set_color((255, 222, 11))
-
-print()
-
-btn.getinfo()
+    
