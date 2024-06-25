@@ -1,30 +1,21 @@
-class CreateButton:
+class Button:
+    def __init__(self, label, action):
+        self.label = label  # текст на кнопке
+        self.action = action  # действие, которое выполняется при нажатии
 
-    def __init__(self, pos: tuple, color: tuple, url: str):
-        self.color = color
-        self.pos = pos
-        self.url = url
+    def click(self):
+        """Нажатие на кнопку."""
+        print(f"Выполняется действие: {self.action}")
 
-    def getinfo(self):
-        print(f'позиция: {self.pos}\n'
-              f'цвет: {self.color}\n'
-              f'ссылка: {self.url}')
+    def change_label(self, new_label):
+        """Изменение текста на кнопке."""
+        self.label = new_label
+        print(f"Текст кнопки изменен на: {self.label}")
 
-    def drag(self, x: int, y: int):
-        """ функция для перемещения кнопки """
+    def disable(self):
+        """Отключение кнопки."""
+        print("Кнопка отключена.")
 
-        self.pos = (x, y)
-        print(f'вы переместили кнопку. новая позиция: {x}, {y}')
-
-    def set_color(self, new_color):
-        """ функция для перекрашивания кнопки """
-
-        self.color = new_color
-        print(f'вы перекрасили кнопку: {new_color}')
-
-    def set_url(self, new_url):
-        """ функция для вставления ссылки в кнопку """
-
-        self.url = new_url
-        print(f'вы вставили новую ссылку: {new_url}')
-    
+    def enable(self):
+        """Включение кнопки."""
+        print("Кнопка включена.")
