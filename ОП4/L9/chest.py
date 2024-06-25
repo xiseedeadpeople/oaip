@@ -1,40 +1,29 @@
-class CreateChest:
+class Chest:
+    def __init__(self, capacity):
+        self.capacity = capacity  # вместимость сундука
+        self.items = []  # список предметов в сундуке
 
-    def __init__(self, pos: tuple, status: str, content: str):
-        self.status = status
-        self.content = content
-        self.pos = pos
-
-    def drag(self, x: int, y: int):
-        """ функция для перемещения сундука """
-
-        self.pos += (x, y)
-        print(f'вы переместили сундук. его новая позиция: {x}, {y}')
-
-    def interact(self):
-        """ функция для открытия/закрытия сундука """
-
-        if self.status == 'closed':
-            print(f'вы открыли сундук. вы нашли в нем: {self.content}')
-
-        if self.status == 'opened':
-            print('вы закрыли сундук.')
-
-        self.status_switch()
-
-    def loot(self):
-        """ функция для того чтобы ограбить сундук """
-
-        if self.status == 'closed':
-            print('сначала откройте сундук!')
-
-        elif self.status == 'opened':
-            print(f'вы забрали содержимое: {self.content}')
-
-    def status_switch(self):
-        """ функция для обновления статуса сундука (отркрыт, закрыт) """
-        if self.status == 'closed':
-            self.status = 'opened'
-
+    def add_item(self, item):
+        """Добавить предмет в сундук."""
+        if len(self.items) < self.capacity:
+            self.items.append(item)
+            print(f"{item} добавлен в сундук.")
         else:
-            self.status = 'closed'
+            print("Сундук полон, предмет не может быть добавлен.")
+
+    def remove_item(self, item):
+        """Убрать предмет из сундука."""
+        if item in self.items:
+            self.items.remove(item)
+            print(f"{item} удален из сундука.")
+        else:
+            print(f"{item} не найден в сундуке.")
+
+    def view_items(self):
+        """Просмотреть содержимое сундука."""
+        if self.items:
+            print("Содержимое сундука:")
+            for item in self.items:
+                print(f"- {item}")
+        else:
+            print("Сундук пуст.")
