@@ -1,25 +1,9 @@
-def gears(a, n, m):
-    first = {}
-    second = {}
-
-    for i in a:
-        for j in i:
-            if j > 0:
-                if j % n == 0:
-                    rn = j // n
-
-                    if rn not in first:
-                        if rn in second:
-                            return j, second[rn]
-                        first[rn] = j
-                        
-                if j % m == 0:
-                    rm = j // m
-
-                    if rm not in second:
-                        if rm in first:
-                            return first[rm], j
-
-                        second[rm] = j
-
-    return None, None
+def gears(data, n, m):
+    for i in range(len(data)):
+        for j in range(len(data)):
+            if i != j:
+                size1 = data[i][0] / data[i][1]  # размер первой шестерёнки
+                size2 = data[j][0] / data[j][1]  # размер второй шестерёнки
+                if size1 == n / m and size2 == m / n:
+                    return (data[i][0], data[j][0])
+    return (None, None)
