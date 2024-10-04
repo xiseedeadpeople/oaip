@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class GameCharacter(ABC):
+class Char(ABC):
     def __init__(self, name):
         self.name = name
 
@@ -10,70 +10,51 @@ class GameCharacter(ABC):
         pass
 
 
-class Warrior(GameCharacter):
+class Warrior(Char):
     def __init__(self, name):
         super().__init__(name)
-        self.weapon = "Меч"
+        self.weapon = 'меч'
 
     def attack(self):
-        print(f"{self.name} атакует с помощью {self.weapon} мощным ударом!")
+        print(f'{self.name} атакует с помощью {self.weapon}, нанося сокрушительный урон!')
 
 
-class Mage(GameCharacter):
+class Mage(Char):
     def __init__(self, name):
         super().__init__(name)
-        self.spell = "Огненный шар"
+        self.spell = 'молния'
 
     def attack(self):
-        print(f"{self.name} использует заклинание {self.spell}, нанося магический урон!")
+        print(f'{self.name} использует заклинание {self.spell}, нанося магический урон!')
 
 
-class Archer(GameCharacter):
+class Archer(Char):
     def __init__(self, name):
         super().__init__(name)
-        self.weapon = "Лук"
+        self.weapon = 'лук'
 
     def attack(self):
-        print(f"{self.name} стреляет из {self.weapon}, нанося урон на расстоянии!")
+        print(f'{self.name} стреляет из {self.weapon}, нанося урон на расстоянии!')
 
 
-class CharacterFactory:
+class CharFactory:
     @staticmethod
-    def create_character(character_type, name):
-        if character_type.lower() == "воин":
-            return Warrior(name)
-        elif character_type.lower() == "маг":
-            return Mage(name)
-        elif character_type.lower() == "лучник":
-            return Archer(name)
+    def create_char(char_type, char_name):
+        if char_type == 'воин':
+            return Warrior(char_name)
+
+        elif char_type == 'маг':
+            return Mage(char_name)
+
+        elif char_type == 'лучник':
+            return Archer(char_name)
+
         else:
-            raise ValueError(f"Неизвестный тип персонажа: {character_type}")
+            raise ValueError(f'такого класса нет: {char_type}')
 
 
-def main():
-    print("Добро пожаловать в игру!")
-    name = input("Введите имя вашего персонажа: ")
+name_ = input('имя героя: ')
+class_ = input('класс героя(маг/воин/лучник): ')
 
-    print("Выберите класс персонажа:")
-    print("1. Воин")
-    print("2. Маг")
-    print("3. Лучник")
-
-    choice = input("Введите номер класса (1-3): ")
-
-    if choice == "1":
-        character_type = "воин"
-    elif choice == "2":
-        character_type = "маг"
-    elif choice == "3":
-        character_type = "лучник"
-    else:
-        print("Неверный выбор. Попробуйте снова.")
-        return
-
-    try:
-        character = CharacterFactory.create_character(character_type, name)
-        print(f"\nВы выбрали {character_type.capitalize()}а по имени {character.name}!")
-        character.attack()
-    except ValueError as e:
-        print(e)
+character = CharFactory.create_char(class_, name_)
+character.attack()
