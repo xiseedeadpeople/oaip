@@ -13,11 +13,11 @@ class Logger:
 
     def _initialize(self):
 
-        self.logger = logging.getLogger("singleton_logger")
+        self.logger = logging.getLogger('singleton_logger')
         self.logger.setLevel(logging.DEBUG)
 
         # обработчик, макс=5кбайи, 2 прошлых записей логов после ротации
-        handler = RotatingFileHandler("res.log", maxBytes=5000, backupCount=2)
+        handler = RotatingFileHandler('res.log', maxBytes=5000, backupCount=2)
         handler.setLevel(logging.DEBUG)
 
         formatter = logging.Formatter('%(message)s  |   %(levelname)s   |   %(asctime)s')
@@ -25,26 +25,26 @@ class Logger:
         self.logger.addHandler(handler)
 
     def log(self, level, message):
-        if level == "debug":
+        if level == 'debug':
             self.logger.debug(message)
-        elif level == "info":
+        elif level == 'info':
             self.logger.info(message)
-        elif level == "warning":
+        elif level == 'warning':
             self.logger.warning(message)
-        elif level == "error":
+        elif level == 'error':
             self.logger.error(message)
-        elif level == "critical":
+        elif level == 'critical':
             self.logger.critical(message)
 
         else:
-            self.logger.info("Unknown log level: " + message)
+            self.logger.info('Unknown log level: ' + message)
 
 
 logger1 = Logger()
 logger2 = Logger()
 
-logger1.log("info", "инф")
-logger2.log("error", "ошибка")
+logger1.log('info', 'инф')
+logger2.log('error', 'ошибка')
 
-print(f"Logger 1 ID: {id(logger1)}")
-print(f"Logger 2 ID: {id(logger2)}")
+print(f'logger1 ID: {id(logger1)}')
+print(f'logger2 ID: {id(logger2)}')
