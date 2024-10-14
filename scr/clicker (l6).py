@@ -1,23 +1,47 @@
-from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton
+from PyQt6.QtWidgets import QComboBox, QMainWindow, QApplication, QWidget, QVBoxLayout
 import sys
 
 
 class MainWindow(QMainWindow):
+
     def __init__(self):
         super().__init__()
 
-        self.setWindowTitle('clicker')
+        self.setMinimumSize(600, 200)
+        self.setMaximumSize(1200, 400)
 
-        self.button = QPushButton('1')
-        self.button.clicked.connect(self.on_click)
-        self.setCentralWidget(self.button)
+        self.cbox1 = QComboBox()
+        self.cbox1.addItems(['USD', 'RUB', 'EUR', 'NZD'])
+        self.cbox1.setFixedSize(200, 50)
 
-    def on_click(self):
-        self.button.setText(f'{int(self.button.text()) + 1}')
-        self.setWindowTitle('clicker, worked')
+        self.cbox2 = QComboBox()
+        self.cbox2.addItems(['RUB', 'USD', 'EUR', 'NZD'])
+        self.cbox2.setFixedSize(200, 50)
+
+        self.box_vals = self.cbox1.currentText(), self.cbox2.currentText()
+        self.cbox1.currentIndexChanged.connect(lambda: self.change_similiars(self.cbox1.currentText()))
+
+        layout = QVBoxLayout()
+        layout.addWidget(self.cbox1)
+        layout.addWidget(self.cbox2)
+
+        container = QWidget()
+        container.setLayout(layout)
+
+        self.setCentralWidget(container)
+
+
+    def change_similiars(self, value):
+
+        if self.cbox1.currentText() == self.cbox2.currentText():
+            self.cbox1.setCurrentText(self.box_vals[0])
+            self.cbox2.setCurrentText(self.box_vals[1])
+
+
 
 
 app = QApplication(sys.argv)
-window = MainWindow()
-window.show()
+w = MainWindow()
+w.show()
 app.exec()
+
