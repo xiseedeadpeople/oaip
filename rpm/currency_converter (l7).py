@@ -25,7 +25,7 @@ for i in allc:
     for el in res:
         curr = float(res[0][-1].replace(',', '.'))
 
-        if res[0][2] != '1':  # если курс к > 1руб
+        if res[0][2] != '1':  # курс валюты > чем к 1 руб /(напр. к 1000)
             curr /= float(res[0][2])
 
         #
@@ -49,12 +49,12 @@ print(d)
 #         # # # # #
 #
 #         self.cbox1 = QComboBox()
-#         self.cbox1.addItems(valutes)
+#         self.cbox1.addItems(valutes) # d.keys()
 #         self.cbox1.setCurrentText('RUB')
 #         self.cbox1.setFixedSize(190, 20)
 #
 #         self.cbox2 = QComboBox()
-#         self.cbox2.addItems(valutes)
+#         self.cbox2.addItems(valutes)  # d.keys()
 #         self.cbox2.setCurrentText('USD')
 #         self.cbox2.setFixedSize(190, 20)
 #
