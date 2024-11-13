@@ -1,5 +1,5 @@
 from flet import (
-    app, Page, Container, Column, Row,
+    app, Page, Container, Column, Row, AlertDialog, Text,
     TextField, colors, border_radius, ElevatedButton, TextAlign, TextStyle
 )
 from flet_core import ThemeMode
@@ -51,8 +51,8 @@ def main(page: Page):
         result.update()
 
     def question_click(e):
-        # show dev info etc
-        pass
+        dlg = AlertDialog(title=Text(f'github/xiseedeadpeople', size=20, color="pink600"), bgcolor=colors.BLACK)
+        page.open(dlg)
 
     button_row0 = Row(
         [
