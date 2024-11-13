@@ -4,6 +4,7 @@ from flet import (
 )
 from flet_core import ThemeMode
 # exe: pyinstaller /  pyinstaller --noconsole --onefile filename.py / try cd name
+# TODO: exceptions / turn into exe / 'RuntimeError: Event loop is closed' / . . .
 
 
 def main(page: Page):
