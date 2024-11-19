@@ -197,6 +197,7 @@ class CalculatorApp(ft.Container):
 
 
 def main(page: ft.Page):
+    # page.window.frameless = True
     page.title = 'ahh'
     page.bgcolor = ft.colors.BLACK
     page.window.width = 475
