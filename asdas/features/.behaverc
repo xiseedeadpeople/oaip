@@ -1,0 +1,5 @@
+[behave]
+features = features
+steps = steps
+logfile = behave.log
+format = pretty
